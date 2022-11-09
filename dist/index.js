@@ -214,6 +214,9 @@ ${formatExportType(classNameKey)}`
         ? `${exportClassNames} | '${classNameKey}'`
         : `${exportClassNames} '${classNameKey}'`
   }
+  if (!exportTypes) {
+    exportClassNames += 'never'
+  }
   let outputFileString = ''
   if (globalOutFile) {
     const relativePath = getRelativePath(
